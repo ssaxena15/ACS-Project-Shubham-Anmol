@@ -20,9 +20,8 @@ variable "prefix" {
 
 # Provision public subnets in custom VPC
 variable "public_subnet_cidrs" {
-  default     = ["10.100.1.0/24","10.100.2.0/24", "10.100.3.0/24"]	# Dev
-#default     = ["10.200.1.0/24","10.200.2.0/24", "10.200.3.0/24"]	# Staging
-  #default     = ["10.300.1.0/24","10.300.2.0/24", "10.300.3.0/24"]	# Prod
+
+  default     = ["10.30.1.0/24","10.300.2.0/24", "10.300.3.0/24"]	# Prod
   
   type        = list(string)
   description = "Public Subnet CIDRs"
@@ -30,18 +29,16 @@ variable "public_subnet_cidrs" {
 
 # Provision private subnets in custom VPC
 variable "private_subnet_cidr" {
-  default     = ["10.100.4.0/24","10.100.5.0/24", "10.100.6.0/24"]	# Dev
-  #default     = ["10.200.1.0/24","10.200.2.0/24", "10.200.3.0/24"]	# Staging
-  #default     = ["10.300.1.0/24","10.300.2.0/24", "10.300.3.0/24"]	# Prod
+  
+  default     = ["10.30.1.0/24","10.300.2.0/24", "10.300.3.0/24"]	# Prod
   type        = list(string)
   description = "Private Subnet CIDR"
 }
 
 # VPC CIDR range
 variable "vpc_cidr" {
-  default     = "10.100.0.0/16"	# Dev
- #default     = "10.200.0.0/16"	# Staging
-  #default     = "10.300.0.0/16"	# Prod
+  
+  default     = "10.30.0.0/16"	# Prod
   
   type        = string
   description = "VPC Network"
@@ -49,9 +46,9 @@ variable "vpc_cidr" {
 
 # Variable to signal the current environment 
 variable "env" {
-  default     = "dev"
+  #default     = "dev"
 #default     = "staging"
-  #default     = "prod"
+  default     = "prod"
   
   type        = string
   description = "Development Environment"
