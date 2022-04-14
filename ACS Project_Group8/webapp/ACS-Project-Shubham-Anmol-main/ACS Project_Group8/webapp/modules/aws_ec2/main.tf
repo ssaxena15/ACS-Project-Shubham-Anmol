@@ -7,9 +7,8 @@ resource "aws_instance" "bastion" {
   
   availability_zone = var.availability_zones_2
   associate_public_ip_address = "true"
-  private_ip = "10.100.2.34" #dev
-  #private_ip = "10.200.2.34" #staging
-  #private_ip = "10.300.2.34" #prod
+  
+  private_ip = "10.30.2.34" #prod
 
   tags = {
     Name = "${var.prefix}-Bastion"
