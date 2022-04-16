@@ -13,7 +13,7 @@ terraform {
 provider "aws" {
   region = var.region
   #access_key = var.access_key
-  #secret_key = var.secret_key
+  # secret_key = var.secret_key
 }
 
 # Terraform state S3 storage
